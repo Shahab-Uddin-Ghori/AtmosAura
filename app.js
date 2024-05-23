@@ -11,6 +11,7 @@ const weather = document.querySelector("#weather");
 const wind = document.querySelector("#wind");
 const country = document.querySelector("#country");
 const sunRiseSunSet = document.querySelector("#sunRiseSunSet");
+const icon = document.querySelector("#icon");
 
 // these const are for error output
 const message = document.querySelector("#message");
@@ -30,23 +31,25 @@ const weatherFunction = async (event) => {
   const collectingDataFromApi = await dataFromApi.json(); // convert data xml to json format
 
   // showing const as output
-  temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} C`
-  feelLike.innerText = `feels Like is ${collectingDataFromApi.main.feels_like} C`
-  humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg`
-  pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa`
-  country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country}`
+  temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} C`;
+  feelLike.innerText = `feels Like is ${collectingDataFromApi.main.feels_like} °C`;
+  humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg`;
+  pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa`;
+  country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country}`;
   // setting and displaying sun rise and sun set into local time
-  const sunriseTime = new Date(collectingDataFromApi.sys.sunrise * 1000).toLocaleTimeString();
-  const sunsetTime = new Date(collectingDataFromApi.sys.sunset * 1000).toLocaleTimeString();
- sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime} <br> Sun Set at ${sunsetTime}`
- weather.innerText = `Weather is ${collectingDataFromApi.weather[0].main} ${collectingDataFromApi.weather[0].description} ${collectingDataFromApi.weather[0].icon}`
- wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s`
- 
-
+  const sunriseTime = new Date(
+    collectingDataFromApi.sys.sunrise * 1000
+  ).toLocaleTimeString();
+  const sunsetTime = new Date(
+    collectingDataFromApi.sys.sunset * 1000
+  ).toLocaleTimeString();
+  sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime} <br> Sun Set at ${sunsetTime}`;
+  icon.innerHTML = `${collectingDataFromApi.weather[0].main} <img src=https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png>`;
+  // weather.innerHTML = `Weather is ${collectingDataFromApi.weather[0].main}`
+  wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s`;
 
   // for checking data is reciving or not on console
   console.log(collectingDataFromApi);
-
 };
 weatherForm.addEventListener("submit", weatherFunction);
 // document.querySelector("#message").innerText = city
