@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather ForeCast</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reponsive.css" />
+  </head>
+  <body>
+    <!-- // form  -->
+    <form action="" id="weatherForm">
+      <input type="text" name="" id="inputField" required />
+      <button type="submit" id="submit">Check</button>
+    </form>
+
+    <!-- output area -->
+
+    <!-- for country  sunrise and sunset  -->
+    <div id="css">
+      <!-- country -->
+      <p id="country"></p>
+      <!-- sunrise SunSet -->
+      <p id="sunRiseSunSet"></p>
+    </div>
+
+    <!-- for temp and feel like temp  -->
+    <div id="tf">
+      <p id="temp"></p>
+      <p id="feelLike"></p>
+    </div>
+
+    <!-- for humidity pressure and wind  -->
+    <div id="hpw">
+      <!-- for humidity -->
+      <p id="humidity"></p>
+      <!-- for pressure -->
+      <p id="pressure"></p>
+      <!-- wind -->
+      <p id="wind"></p>
+    </div>
+
+    <!-- for weather icon etc -->
+    <div id="weather">
+      <!-- weather -->
+      <p id="weather"></p>
+    </div>
+
+    <!-- for showing error -->
+    <div id="errors">
+      <p id="message"></p>
+    </div>
+    <script src="app.js"></script>
+    <!-- <script src="apiKey.js"></script> -->
+  </body>
+</html>
