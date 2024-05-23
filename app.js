@@ -7,7 +7,7 @@ const temp = document.querySelector("#temp");
 const humidity = document.querySelector("#humidity");
 const feelLike = document.querySelector("#feelLike");
 const pressure = document.querySelector("#pressure");
-const weather = document.querySelector("#weather");
+const ToDayWeather = document.querySelector("#weather");
 const wind = document.querySelector("#wind");
 const country = document.querySelector("#country");
 const sunRiseSunSet = document.querySelector("#sunRiseSunSet");
@@ -44,8 +44,8 @@ const weatherFunction = async (event) => {
     collectingDataFromApi.sys.sunset * 1000
   ).toLocaleTimeString();
   sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime} <br> Sun Set at ${sunsetTime}`;
-  icon.innerHTML = `${collectingDataFromApi.weather[0].main} <img src=https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png>`;
-  // weather.innerHTML = `Weather is ${collectingDataFromApi.weather[0].main}`
+  icon.innerHTML = `<img src=https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png >`;
+  ToDayWeather.innerHTML = `${collectingDataFromApi.weather[0].description}`
   wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s`;
 
   // for checking data is reciving or not on console
