@@ -32,7 +32,7 @@ const weatherFunction = async (event) => {
 
   // showing const as output
   temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} C`;
-  feelLike.innerText = `feels Like is ${collectingDataFromApi.main.feels_like} °C`;
+  feelLike.innerText = `Feels Like is ${collectingDataFromApi.main.feels_like} °C`;
   humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg`;
   pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa`;
   country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country}`;
