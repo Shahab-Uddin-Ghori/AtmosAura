@@ -22,6 +22,8 @@ const apiKEY = `98092c54b629e85a8a8adc138825a7b2`;
 // async/ function for weather call when submit form
 const weatherFunction = async (event) => {
   event.preventDefault(); // preventing for refreshing page
+  message.innerText = ""
+  try{
   const city = inputField.value; // getting city name as a Value
 
   // api url
@@ -29,6 +31,7 @@ const weatherFunction = async (event) => {
 
   const dataFromApi = await fetch(apiUrl); // by fetching form api
   const collectingDataFromApi = await dataFromApi.json(); // convert data xml to json format
+
 
   // showing const as output
   temp.innerText = `Current Temp is ${Math.round(collectingDataFromApi.main.temp)} °C 🌡️ `;
@@ -49,7 +52,10 @@ const weatherFunction = async (event) => {
   wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s 🌪️`;
 
   // for checking data is reciving or not on console
-  console.log(collectingDataFromApi);
+  console.log(collectingDataFromApi);}
+  catch (error){
+    message.innerText = error?.dataFromApi?.collectingDataFromApi?.message || "unable to fetch data OR its a typo mistake";
+  }
 };
 weatherForm.addEventListener("submit", weatherFunction);
 // document.querySelector("#message").innerText = city
