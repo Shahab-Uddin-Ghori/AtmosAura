@@ -19,20 +19,17 @@ body{
     display: flex;
     justify-content: center;
     padding: 1.5rem;
-}
-#submain{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  #submain{ 
     width: 50rem;
-    height: 20rem;
+    height: 25rem;
     background-color: #ffffff69;
     backdrop-filter: blur(10px);
     border-radius: 4px;
 }
 
 #icon img{
-    width: 100px; /* Adjust the size as needed */
+    width: 100px; 
     height: 100px;
      /* Basic filter to invert colors */
 }
@@ -46,12 +43,32 @@ body{
     width: 100px;
     height: 100px;
 }
+#weatherForm{
+  margin: 1rem;
+}
 #formbtnDiv{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: .5rem;
+}
+#weatherDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  /* width: 100%;   */
+}
+#weatherWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+width: 20rem;
+height: 8rem;
 }
 #inputField{
     width: 20rem;
@@ -134,4 +151,40 @@ body{
 #submit:active {
   border-width: 4px 0 0;
   background: none;
+}
+
+#textWrapper{
+  display: flex;
+  justify-content: space-around;
+  padding: 0rem 1rem  ;
+  line-height: 32px;
+  margin: 1rem;
+}
+
+#css{
+  /* background-color: #000000d4; */
+  padding: 1rem;
+  width: 12rem;
+  height: 6rem;
+  border-radius: 4px;
+}
+
+#tf{
+  /* background-color: #000000d4; */
+  padding: 1rem;
+  width: 12rem;
+  height: 6rem;
+  border-radius: 4px;
+}
+
+#hpw{
+  /* background-color: #000000d4; */
+  padding: 1rem;
+  width: 12rem;
+  height: 6rem;
+  border-radius: 4px;
+}
+#weather{
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }

@@ -31,11 +31,11 @@ const weatherFunction = async (event) => {
   const collectingDataFromApi = await dataFromApi.json(); // convert data xml to json format
 
   // showing const as output
-  temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} °C`;
-  feelLike.innerText = `Feels Like is ${collectingDataFromApi.main.feels_like} °C`;
-  humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg`;
-  pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa`;
-  country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country}`;
+  temp.innerText = `Current Temp is ${Math.round(collectingDataFromApi.main.temp)} °C 🌡️ `;
+  feelLike.innerText = `Feels Like is ${Math.round(collectingDataFromApi.main.feels_like)} °C 🌞`;
+  humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg 💦`;
+  pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa  💨`;
+  country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country} 🌍`;
   // setting and displaying sun rise and sun set into local time
   const sunriseTime = new Date(
     collectingDataFromApi.sys.sunrise * 1000
@@ -43,10 +43,10 @@ const weatherFunction = async (event) => {
   const sunsetTime = new Date(
     collectingDataFromApi.sys.sunset * 1000
   ).toLocaleTimeString();
-  sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime} <br> Sun Set at ${sunsetTime}`;
+  sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime } 🌅 <br> Sun Set at ${sunsetTime} 🌇`;
   icon.innerHTML = `<img src=https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png >`;
   ToDayWeather.innerHTML = `${collectingDataFromApi.weather[0].description}`
-  wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s`;
+  wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s 🌪️`;
 
   // for checking data is reciving or not on console
   console.log(collectingDataFromApi);

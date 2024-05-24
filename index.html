@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather ForeCast</title>
+    <title>AtmosAura</title>
+    <link rel="icon" href="./img/sun_1888282.png">
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="reponsive.css" />
   </head>
   <body>
-
     <div id="iconset">
       <div id="sun"></div>
       <h1>AtmosAura</h1>
@@ -16,53 +16,61 @@
     <!-- // form  -->
     <div id="main">
       <div id="submain">
-      <form action="" id="weatherForm">
-        <div id="formbtnDiv">
-        <input type="text" name="" id="inputField" required placeholder="Enter City Name"/>
-        <button type="submit" id="submit">Check</button>
+        <form action="" id="weatherForm">
+          <div id="formbtnDiv">
+            <input
+              type="text"
+              name=""
+              id="inputField"
+              required
+              placeholder="Enter City Name"
+            />
+            <button type="submit" id="submit">Check</button>
+          </div>
+        </form>
+
+        <!-- output area -->
+
+        <!-- for weather status-->
+        <div id="weatherDiv">
+          <div id="weatherWrapper">
+          <!-- weather -->
+          <p id="weather"></p>
+          <!-- for weather Icon  -->
+          <div id="icon"></div>
+        </div>
+        </div>
+
+        <div id="textWrapper">
+        <!-- for country  sunrise and sunset  -->
+        <div id="css">
+          <!-- country -->
+          <p id="country"></p>
+          <!-- sunrise SunSet -->
+          <p id="sunRiseSunSet"></p>
+        </div>
+
+        <!-- for temp and feel like temp  -->
+        <div id="tf">
+          <p id="temp"></p>
+          <p id="feelLike"></p>
+        </div>
+
+        <!-- for humidity pressure and wind  -->
+        <div id="hpw">
+          <!-- for humidity -->
+          <p id="humidity"></p>
+          <!-- for pressure -->
+          <p id="pressure"></p>
+          <!-- wind -->
+          <p id="wind"></p>
+        </div>
       </div>
-    </form>
-
-      <!-- output area -->
-
-      <!-- for weather status-->
-      <div id="weatherDiv">
-        <!-- weather -->
-        <p id="weather"></p>
+        <!-- for showing error -->
+        <div id="errors">
+          <p id="message"></p>
+        </div>
       </div>
-
-      <!-- for weather Icon  -->
-      <div id="icon"></div>
-
-      <!-- for country  sunrise and sunset  -->
-      <div id="css">
-        <!-- country -->
-        <p id="country"></p>
-        <!-- sunrise SunSet -->
-        <p id="sunRiseSunSet"></p>
-      </div>
-
-      <!-- for temp and feel like temp  -->
-      <div id="tf">
-        <p id="temp"></p>
-        <p id="feelLike"></p>
-      </div>
-
-      <!-- for humidity pressure and wind  -->
-      <div id="hpw">
-        <!-- for humidity -->
-        <p id="humidity"></p>
-        <!-- for pressure -->
-        <p id="pressure"></p>
-        <!-- wind -->
-        <p id="wind"></p>
-      </div>
-
-      <!-- for showing error -->
-      <div id="errors">
-        <p id="message"></p>
-      </div>
-    </div>  
     </div>
     <script src="app.js"></script>
     <!-- <script src="apiKey.js"></script> -->
