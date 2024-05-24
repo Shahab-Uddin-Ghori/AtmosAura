@@ -33,6 +33,8 @@
     background-color: #ffffff69;
     backdrop-filter: blur(10px);
     border-radius: 4px;
+    transform: translateY(-100%);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 #icon img{
@@ -43,6 +45,9 @@
 #iconset{
     display: flex;
     padding: 2rem;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+
 }
 #sun{
     background-image: url(./img/sun_1888282.png);
@@ -218,6 +223,8 @@ footer {
   align-items: center;
   justify-content: space-around;
   padding: 0 1rem;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 1s ease;
 }
 footer p a {
   font-weight: 700;
