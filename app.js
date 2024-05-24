@@ -31,7 +31,7 @@ const weatherFunction = async (event) => {
   const collectingDataFromApi = await dataFromApi.json(); // convert data xml to json format
 
   // showing const as output
-  temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} C`;
+  temp.innerText = `Current Temp is ${collectingDataFromApi.main.temp} °C`;
   feelLike.innerText = `Feels Like is ${collectingDataFromApi.main.feels_like} °C`;
   humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg`;
   pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa`;
