@@ -1,8 +1,9 @@
-// const for getting form submit and input field
-const weatherForm = document.querySelector("#weatherForm"); // for form submition
-const inputField = document.querySelector("#inputField"); // for input field
+// Selectors for form submission and input field
+const weatherForm = document.querySelector("#weatherForm");
+const inputField = document.querySelector("#inputField");
+const submitButton = weatherForm.querySelector("button[type='submit']"); // Selector for the submit button
 
-// these const are out const they are showing temp, humidity, feel like, windSpeed, country etc
+// Selectors for displaying weather information
 const temp = document.querySelector("#temp");
 const humidity = document.querySelector("#humidity");
 const feelLike = document.querySelector("#feelLike");
@@ -12,50 +13,76 @@ const wind = document.querySelector("#wind");
 const country = document.querySelector("#country");
 const sunRiseSunSet = document.querySelector("#sunRiseSunSet");
 const icon = document.querySelector("#icon");
+const loading = document.querySelector("#loading");
 
-// these const are for error output
+// Selector for displaying error messages
 const message = document.querySelector("#message");
 
-// api key
+// Group weather elements for easy clearing
+let clear = { temp, humidity, feelLike, pressure, ToDayWeather, wind, country, sunRiseSunSet, icon };
+
+// API key
 const apiKEY = `98092c54b629e85a8a8adc138825a7b2`;
 
-// async/ function for weather call when submit form
+// Function to fetch and display weather data
 const weatherFunction = async (event) => {
-  event.preventDefault(); // preventing for refreshing page
-  message.innerText = ""
-  try{
-  const city = inputField.value; // getting city name as a Value
+  event.preventDefault(); // Prevent page refresh on form submission
 
-  // api url
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKEY}`;
+  // Disable the submit button to prevent multiple submissions
+  submitButton.disabled = true;
 
-  const dataFromApi = await fetch(apiUrl); // by fetching form api
-  const collectingDataFromApi = await dataFromApi.json(); // convert data xml to json format
+  // Clear previous data and set loading message
+  Object.values(clear).forEach(element => element.innerText = '');
+  message.innerText = "";
+  loading.innerHTML = `<img src="./img/loading.gif" style="vertical-align: middle;">`; // Add loading GIF
+  loading.style.fontSize = '2rem'; // Set the font size using JavaScript
 
+  try {
+    const city = encodeURIComponent(inputField.value.trim()); // Get and URL-encode city name
 
-  // showing const as output
-  temp.innerText = `Current Temp is ${Math.round(collectingDataFromApi.main.temp)} °C 🌡️ `;
-  feelLike.innerText = `Feels Like is ${Math.round(collectingDataFromApi.main.feels_like)} °C 🌞`;
-  humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} g/kg 💦`;
-  pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} pa  💨`;
-  country.innerText = `${collectingDataFromApi.name} ${collectingDataFromApi.sys.country} 🌍`;
-  // setting and displaying sun rise and sun set into local time
-  const sunriseTime = new Date(
-    collectingDataFromApi.sys.sunrise * 1000
-  ).toLocaleTimeString();
-  const sunsetTime = new Date(
-    collectingDataFromApi.sys.sunset * 1000
-  ).toLocaleTimeString();
-  sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime } 🌅 <br> Sun Set at ${sunsetTime} 🌇`;
-  icon.innerHTML = `<img src=https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png >`;
-  ToDayWeather.innerHTML = `${collectingDataFromApi.weather[0].description}`
-  wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s 🌪️`;
+    // Construct the API URL
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKEY}`;
 
-  // for checking data is reciving or not on console
-  console.log(collectingDataFromApi);}
-  catch (error){
-    message.innerText = error?.dataFromApi?.collectingDataFromApi?.message || "unable to fetch data OR its a typo mistake";
+    // Fetch data from the API
+    const dataFromApi = await fetch(apiUrl);
+    const collectingDataFromApi = await dataFromApi.json();
+
+    // Check if the API returned an error
+    if (collectingDataFromApi.cod !== 200) {
+      throw new Error(collectingDataFromApi.message);
+    }
+
+    // Clear the loading message
+    loading.innerText = "";
+
+    // Update UI with the fetched data
+    temp.innerText = `Current Temp is ${Math.round(collectingDataFromApi.main.temp)} °C 🌡️`;
+    feelLike.innerText = `Feels Like is ${Math.round(collectingDataFromApi.main.feels_like)} °C 🌞`;
+    humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} % 💦`;
+    pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} hPa 💨`;
+    country.innerText = `${collectingDataFromApi.name}, ${collectingDataFromApi.sys.country} 🌍`;
+
+    // Convert sunrise and sunset times to local time
+    const sunriseTime = new Date(collectingDataFromApi.sys.sunrise * 1000).toLocaleTimeString();
+    const sunsetTime = new Date(collectingDataFromApi.sys.sunset * 1000).toLocaleTimeString();
+    sunRiseSunSet.innerHTML = `Sun Rise at ${sunriseTime} 🌅 <br> Sun Set at ${sunsetTime} 🌇`;
+
+    // Display weather icon
+    icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${collectingDataFromApi.weather[0].icon}.png" alt="weather icon">`;
+    ToDayWeather.innerHTML = `${collectingDataFromApi.weather[0].description}`;
+    wind.innerText = `Wind Speed is ${collectingDataFromApi.wind.speed} m/s 🌪️`;
+
+    // Log data to console for debugging
+    console.log(collectingDataFromApi);
+  } catch (error) {
+    // Display error message if data fetch fails
+    loading.innerText = "";
+    message.innerText = error.message || "Unable to fetch data. Please check the city name or try again later.";
+  } finally {
+    // Re-enable the submit button after the request is complete
+    submitButton.disabled = false;
   }
 };
+
+// Add event listener for form submission
 weatherForm.addEventListener("submit", weatherFunction);
-// document.querySelector("#message").innerText = city

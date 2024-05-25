@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AtmosAura</title>
-    <link rel="icon" href="./img/sun_1888282.png">
+    <link rel="icon" href="./img/sun_1888282.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="reponsive.css" />
   </head>
@@ -35,48 +35,61 @@
         <!-- for weather status-->
         <div id="weatherDiv">
           <div id="weatherWrapper">
-          <!-- weather -->
-          <p id="weather"></p>
-          <!-- for weather Icon  -->
-          <div id="icon"></div>
-        </div>
+            <!-- weather -->
+            <p id="loading"></p>
+            <p id="weather"></p>
+            <!-- for weather Icon  -->
+
+            <!-- for showing error -->
+            <div id="icon"></div>
+            <div id="errors">
+              <p id="message"></p>
+            </div>
+          </div>
         </div>
 
         <div id="textWrapper">
-        <!-- for country  sunrise and sunset  -->
-        <div id="css">
-          <!-- country -->
-          <p id="country"></p>
-          <!-- sunrise SunSet -->
-          <p id="sunRiseSunSet"></p>
-        </div>
+          <!-- for country  sunrise and sunset  -->
+          <div id="css">
+            <!-- country -->
+            <p id="country"></p>
+            <!-- sunrise SunSet -->
+            <p id="sunRiseSunSet"></p>
+          </div>
 
-        <!-- for temp and feel like temp  -->
-        <div id="tf">
-          <p id="temp"></p>
-          <p id="feelLike"></p>
-        </div>
+          <!-- for temp and feel like temp  -->
+          <div id="tf">
+            <p id="temp"></p>
+            <p id="feelLike"></p>
+          </div>
 
-        <!-- for humidity pressure and wind  -->
-        <div id="hpw">
-          <!-- for humidity -->
-          <p id="humidity"></p>
-          <!-- for pressure -->
-          <p id="pressure"></p>
-          <!-- wind -->
-          <p id="wind"></p>
+          <!-- for humidity pressure and wind  -->
+          <div id="hpw">
+            <!-- for humidity -->
+            <p id="humidity"></p>
+            <!-- for pressure -->
+            <p id="pressure"></p>
+            <!-- wind -->
+            <p id="wind"></p>
+          </div>
         </div>
-      </div>
-        <!-- for showing error -->
+        <!-- for showing error
         <div id="errors">
           <p id="message"></p>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <footer id="footer">
       <p>Shahab Uddin Ghori <sup>&#169;</sup></p>
-      <p>Check My LinkTree <a href="https://shahab-uddin-ghori.github.io/Link-Tree/" target="_blank">Click Here!</a></p>
+      <p>
+        Check My LinkTree
+        <a
+          href="https://shahab-uddin-ghori.github.io/Link-Tree/"
+          target="_blank"
+          >Click Here!</a
+        >
+      </p>
     </footer>
     <script src="app.js"></script>
     <script src="apiKey.js"></script>
