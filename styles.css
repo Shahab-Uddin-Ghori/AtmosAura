@@ -1,71 +1,82 @@
 @font-face {
-    font-family: sf-Pro;
-    src: url(./SFPRODISPLAYREGULAR.OTF);
+  font-family: sf-Pro;
+  src: url(./SFPRODISPLAYREGULAR.OTF);
 }
-*{
-    padding: 0;
-    margin: 0;
-    font-family: sf-Pro;
-    color: #ffffffdb;
-    text-decoration: none;
-  }
-  body{
-    overflow: hidden;
-    background: rgb(15,6,66);
-    background: -moz-linear-gradient(90deg, rgba(15,6,66,1) 0%, rgba(3,139,215,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(15,6,66,1) 0%, rgba(3,139,215,1) 100%);
-    background: linear-gradient(90deg, rgba(15,6,66,1) 0%, rgba(3,139,215,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0642",endColorstr="#038bd7",GradientType=1);
-  }
-  #main{
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sf-Pro;
+  color: #ffffffdb;
+  text-decoration: none;
+}
+body {
+  overflow: hidden;
+  background: rgb(15, 6, 66);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(15, 6, 66, 1) 0%,
+    rgba(3, 139, 215, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(15, 6, 66, 1) 0%,
+    rgba(3, 139, 215, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(15, 6, 66, 1) 0%,
+    rgba(3, 139, 215, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f0642",endColorstr="#038bd7",GradientType=1);
+}
+#main {
   /* background-image: url(./img/drops_616549.png);
   background-size: 10rem;
   background-blend-mode: lighten;
   background-repeat: no-repeat;
   background-position: center; */
-    display: flex;
-    justify-content: center;
-    padding: 0rem 1rem;
-  }
-  #submain{ 
-    width: 50rem;
-    height: 25rem;
-    background-color: #ffffff69;
-    backdrop-filter: blur(10px);
-    border-radius: 4px;
-    transform: translateY(-100%);
-    transition: opacity 1s ease, transform 1s ease;
+  display: flex;
+  justify-content: center;
+  padding: 0rem 1rem;
+}
+#submain {
+  width: 50rem;
+  height: 40rem;
+  background-color: #ffffff69;
+  backdrop-filter: blur(10px);
+  border-radius: 4px;
+  transform: translateY(-100%);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-#icon img{
-    width: 100px; 
-    height: 100px;
-     /* Basic filter to invert colors */
+#icon img {
+  width: 100px;
+  height: 100px;
+  /* Basic filter to invert colors */
 }
-#iconset{
-    display: flex;
-    padding: 2rem;
-    transform: translateX(-100%);
-    transition: opacity 1s ease, transform 1s ease;
-
+#iconset {
+  display: flex;
+  padding: 2rem;
+  transform: translateX(-100%);
+  transition: opacity 1s ease, transform 1s ease;
 }
-#sun{
-    background-image: url(./img/sun_1888282.png);
-    background-size: cover;
-    width: 100px;
-    height: 100px;
+#sun {
+  background-image: url(./img/sun_1888282.png);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
 }
-#weatherForm{
+#weatherForm {
   margin: 1rem;
 }
-#formbtnDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
+#formbtnDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
-#weatherDiv{
+#weatherDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,45 +84,45 @@
   margin-bottom: 1rem;
   /* width: 100%;   */
 }
-#weatherWrapper{
+#weatherWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* background-color: red; */
-width: 20rem;
-height: 8rem;
+  width: 20rem;
+  height: 8rem;
 }
-#inputField{
-    width: 20rem;
-    height: 2rem;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    color: rgba(0, 0, 0, 0.643);
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 550;
-    letter-spacing: 1.5px;
-    transition: ease .2s ;
+#inputField {
+  width: 30rem;
+  height: 3rem;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.643);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 550;
+  letter-spacing: 1.5px;
+  transition: ease 0.2s;
 }
-#inputField:focus{
-    outline:  3px solid #81B8FD;
+#inputField:focus {
+  outline: 3px solid #81b8fd;
 }
 
 /* CSS */
 #submit {
   appearance: button;
-  background-color: #1899D6;
+  background-color: #1899d6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  font-family: din-round,sans-serif;
-  font-size: 12px;
+  font-family: din-round, sans-serif;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 20px;
@@ -123,17 +134,17 @@ height: 8rem;
   text-transform: uppercase;
   touch-action: manipulation;
   transform: translateZ(0);
-  transition: filter .2s;
+  transition: filter 0.2s;
   user-select: none;
   -webkit-user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  width: 8rem;
+  width: 10rem;
 }
 
 #submit:after {
   background-clip: padding-box;
-  background-color: #1CB0F6;
+  background-color: #1cb0f6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -165,42 +176,47 @@ height: 8rem;
   background: none;
 }
 
-#textWrapper{
+#textWrapper {
   display: flex;
   justify-content: space-around;
-  padding: 0rem 1rem  ;
-  line-height: 32px;
-  margin: 1rem;
+  padding: 0rem 1rem;
+  /* margin: 1rem; */
+  text-align: start;
 }
 
-#css{
+#css {
   /* background-color: #000000d4; */
   padding: 1rem;
-  width: 12rem;
-  height: 6rem;
+  /* width: 12rem; */
+  /* height: 6rem; */
   border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 3rem;
 }
 
-#tf{
+#tf {
   /* background-color: #000000d4; */
   padding: 1rem;
-  width: 12rem;
-  height: 6rem;
+  /* width: 12rem; */
+  /* height: 6rem; */
   border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 3rem;
 }
 
-#hpw{
+#hpw {
   /* background-color: #000000d4; */
   padding: 1rem;
-  width: 12rem;
-  height: 6rem;
+  /* width: 12rem; */
+  /* height: 6rem; */
   border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 3rem;
 }
-#weather{
+#weather {
   font-size: 1.5rem;
   letter-spacing: 1px;
 }
-
 
 #emoji {
   position: absolute;
@@ -210,7 +226,7 @@ height: 8rem;
   pointer-events: none; /* Ensures emoji does not interfere with mouse interactions */
   transition: transform 0.1s linear;
   z-index: 1000;
-  filter:brightness(-100);
+  filter: brightness(-100);
 }
 
 footer {
@@ -230,9 +246,18 @@ footer p a {
   font-weight: 700;
   letter-spacing: 1px;
 }
-#message{
+#message {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: capitalize;
+}
+
+/* // media qurey html  */
+.cards,
+.card .imgBox,
+.mouse,
+.contentBox,
+.buy {
+  display: none;
 }
