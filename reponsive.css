@@ -104,12 +104,10 @@
     height: 300px;
     width: auto;
   }
-
+  /* #main{
+display: none;
+  }
   #submain {
     display: none;
-  }
-  #weatherForm,
-  #inputField, #formbtnDiv {
-    display: block; 
-  }
+  } */
 }

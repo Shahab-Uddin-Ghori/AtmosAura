@@ -78,6 +78,11 @@ const weatherFunction = async (event) => {
     // Display error message if data fetch fails
     loading.innerText = "";
     message.innerText = error.message || "Unable to fetch data. Please check the city name or try again later.";
+    swal({
+      title: "OOPS",
+      text: "Unable to fetch data. Please check the city name or try again later.",
+      icon: "error",
+    });
   } finally {
     // Re-enable the submit button after the request is complete
     submitButton.disabled = false;
