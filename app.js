@@ -56,7 +56,7 @@ const weatherFunction = async (event) => {
     loading.innerText = "";
 
     // Update UI with the fetched data
-    temp.innerText = `Current Temp is ${Math.round(collectingDataFromApi.main.temp)} °C 🌡️`;
+    temp.innerText = `${Math.round(collectingDataFromApi.main.temp)} °C 🌡️`;
     feelLike.innerText = `Feels Like is ${Math.round(collectingDataFromApi.main.feels_like)} °C 🌞`;
     humidity.innerText = `Humidity is ${collectingDataFromApi.main.humidity} % 💦`;
     pressure.innerText = `Pressure is ${collectingDataFromApi.main.pressure} hPa 💨`;
